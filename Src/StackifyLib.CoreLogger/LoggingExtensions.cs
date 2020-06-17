@@ -15,5 +15,13 @@ namespace StackifyLib.CoreLogger
             factory.AddProvider(new StackifyLoggerProvider());
             return factory;
         }
+
+        public static ILoggingBuilder AddStackify(this ILoggingBuilder loggingBuilder)
+        {
+            if (loggingBuilder == null)
+                throw new ArgumentNullException("builder");
+            loggingBuilder.AddProvider(new StackifyLoggerProvider());
+            return loggingBuilder; 
+        }
     }
 }
