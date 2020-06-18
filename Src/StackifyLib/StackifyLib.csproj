@@ -3,7 +3,7 @@
   <PropertyGroup>
     <AssemblyTitle>Stackify API</AssemblyTitle>
     <VersionPrefix>2.1.0</VersionPrefix>
-    <TargetFrameworks>netstandard2.0;net40;net45;net451;net452;net46;net461;net462</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net40;net45;net451;net452;net46;net461;net472</TargetFrameworks>
     <AssemblyName>StackifyLib</AssemblyName>
     <PackageId>StackifyLib</PackageId>
     <PackageTags>stackify;metrics;errors;logs</PackageTags>
@@ -23,17 +23,18 @@
     <AssemblyVersion>2.1.6.0</AssemblyVersion>
     <FileVersion>2.1.6.0</FileVersion>
     <PackageReleaseNotes>Remove default internal file logger</PackageReleaseNotes>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'net461' OR '$(TargetFramework)' == 'net462' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'net461' OR '$(TargetFramework)' == 'net472' ">
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' OR '$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net451' OR '$(TargetFramework)' == 'net452' OR '$(TargetFramework)' == 'net46' OR '$(TargetFramework)' == 'net461' OR '$(TargetFramework)' == 'net462' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' OR '$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net451' OR '$(TargetFramework)' == 'net452' OR '$(TargetFramework)' == 'net46' OR '$(TargetFramework)' == 'net461' OR '$(TargetFramework)' == 'net472' ">
 
     <Reference Include="System.Configuration" />
     <Reference Include="System.Management" />
@@ -48,7 +49,7 @@
     <DefineConstants>NETCORE</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net461' OR '$(TargetFramework)' == 'net462' ">
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net461' OR '$(TargetFramework)' == 'net472' ">
     <DefineConstants>NETCORE;NETCOREX;NETFULL</DefineConstants>
   </PropertyGroup>
 
